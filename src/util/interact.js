@@ -3,14 +3,44 @@ const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 const contractABI = require("../contract-abi.json");
-const contractAddress = "";
+const contractAddress = "0x99A4011f1C715dcCdd1Ae7B9C0c94BBCF183cDDb";
 
 
-export const contract = new web3.eth.Contract(
+export const fundMeContract = new web3.eth.Contract(
     contractABI,
     contractAddress
 );
 
+
+export const getTotalAmountFunded = async () => {
+    const totalAmount = await fundMeContract.methods.getTotalAmount().call();
+    console.log('Total: ',totalAmount);
+    return totalAmount;
+};
+
+export const donate = async (address, value) => {
+  const transactionParameters = {
+    to: contractAddress, // Required except during contract publications.
+    from: address, // must match user's active address.
+    value: parseInt(value).toString(16),
+    data: fundMeContract.methods.fund("hello").encodeABI(),
+  };
+
+  try {
+    const txHash = await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [transactionParameters],
+    });
+    console.log(txHash);
+    return {
+      status: " Once the transaction is verified by the network, the message will be updated automatically.",
+    };
+  } catch (error) {
+    return {
+      status: "😥 " + error.message,
+    };
+  }
+};
 
 export const connectWallet = async () => {
     if (window.ethereum) {
