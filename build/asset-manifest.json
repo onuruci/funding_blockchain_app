@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/funding_blockchain_app/static/css/main.fb801200.chunk.css",
+    "main.js": "/funding_blockchain_app/static/js/main.160a98ac.chunk.js",
+    "main.js.map": "/funding_blockchain_app/static/js/main.160a98ac.chunk.js.map",
+    "runtime-main.js": "/funding_blockchain_app/static/js/runtime-main.ffc3fcc5.js",
+    "runtime-main.js.map": "/funding_blockchain_app/static/js/runtime-main.ffc3fcc5.js.map",
+    "static/js/2.4229c1bf.chunk.js": "/funding_blockchain_app/static/js/2.4229c1bf.chunk.js",
+    "static/js/2.4229c1bf.chunk.js.map": "/funding_blockchain_app/static/js/2.4229c1bf.chunk.js.map",
+    "static/js/3.da7ef4a9.chunk.js": "/funding_blockchain_app/static/js/3.da7ef4a9.chunk.js",
+    "static/js/3.da7ef4a9.chunk.js.map": "/funding_blockchain_app/static/js/3.da7ef4a9.chunk.js.map",
+    "index.html": "/funding_blockchain_app/index.html",
+    "static/css/main.fb801200.chunk.css.map": "/funding_blockchain_app/static/css/main.fb801200.chunk.css.map",
+    "static/js/2.4229c1bf.chunk.js.LICENSE.txt": "/funding_blockchain_app/static/js/2.4229c1bf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffc3fcc5.js",
+    "static/js/2.4229c1bf.chunk.js",
+    "static/css/main.fb801200.chunk.css",
+    "static/js/main.160a98ac.chunk.js"
+  ]
+}
