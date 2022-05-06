@@ -1,0 +1,90 @@
+.main-icon{
+    width: 24px;
+    height: 24px;
+}
+
+.main-tab{
+    display: flex;
+    gap: 8px;
+    margin-right: 10px;
+}
+.main-tab-text{
+    font-weight: bold;
+    color: rgb(76, 149, 192);
+    font-size: 20px;
+}
+.left-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+.left-tab{
+    background-color: inherit;
+    border: none;
+    color: rgb(95, 94, 94);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 8px 3px 8px;
+    border-radius: 8px;
+}
+
+.footer{
+    width: 98vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+}
+
+.left-tab:hover{
+    background-color: black;
+    color: white;
+    
+}
+.right-side{    
+    display: flex;
+    padding-right: 2rem;
+    gap: 3rem;
+}
+
+.right-tab{
+    width: 7rem;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: inherit;
+    border: none;
+    padding: 5px 3px 5px 3px;
+    border-radius: 8px;
+    color: rgb(95, 94, 94);
+}
+
+.right-tab:hover{
+
+    background-color: black;
+    color: white;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    gap: 1rem;
+    justify-content: center;
+}
+.content-main-text{
+    font-size: 48px;
+    width: 40rem;
+    text-align: center;
+    font-weight: bolder;
+    color: rgb(7, 7, 85);
+}
+
+.content-sub-text{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(43, 42, 42);
+    width: 26rem;
+}

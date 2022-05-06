@@ -1,5 +1,7 @@
 import react from "react";
 import { useState, useEffect, useLayoutEffect } from "react";
+import webIcon from './decentralized.png'
+import './style.css'
 import {
     connectWallet, 
     getCurrentWalletConnected,
@@ -61,7 +63,67 @@ const Home = () => {
     };
 
     return(
-        <div>
+
+        <>
+        <div className= "footer">
+            <div className="left-side">
+
+                <div className="main-tab">
+                    <img src={webIcon} className = "main-icon" alt="main-icon"></img>
+                    <div className="main-tab-text">
+                        Website Name
+                    </div>
+                    
+                </div>
+
+                <button className="left-tab">
+                    Tab 1 Text
+                </button>
+                <button className="left-tab">
+                    Tab 2 Text
+                </button>
+                <button className="left-tab left-tab-three">
+                    Tab 3 Text
+                </button>
+                <button className="left-tab">
+                    Tab 4 Text
+                </button>
+
+
+            </div>
+
+            <div className="right-side">
+                <button className="right-tab">
+                    Log in
+                </button>
+                <button className="right-tab">
+                    Sign up
+                </button>
+            </div>
+
+        </div>
+
+        <div className="content">
+            <div className="content-main-text">
+                Decentralized for a better tomorrow
+            </div>
+            <div className="content-sub-text">
+                Buy something. Join and fund causes. Change the world!
+            </div>
+
+            <div>
+                
+            </div>
+
+        </div>
+
+        <div className="footer">
+
+
+        </div>
+        </>
+
+        /*<div>
             <h1>Fund Us</h1>
             <h2>About fund us project</h2>
             <p>
@@ -89,7 +151,7 @@ const Home = () => {
             <button onClick={handleConnect}>Connect</button>
             <button onClick={handleDisconnect}>Disconnect</button>
 
-        </div>
+    </div>*/
     );
 };
 
