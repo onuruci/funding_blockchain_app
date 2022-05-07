@@ -18,6 +18,34 @@ export const getTotalAmountFunded = async () => {
     return totalAmount;
 };
 
+export const getBalance = async () => {
+  const balance = await fundMeContract.methods.getBalance().call();
+  return balance;
+};
+
+export const withdrawFunds = async (address) => {
+  const transactionParameters = {
+    to: contractAddress, // Required except during contract publications.
+    from: address, // must match user's active address.
+    data: fundMeContract.methods.withdraw().encodeABI(),
+  };
+
+  try {
+    const txHash = await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [transactionParameters],
+    });
+    console.log(txHash);
+    return {
+      status: " Once the transaction is verified by the network, the message will be updated automatically.",
+    };
+  } catch (error) {
+    return {
+      status: "😥 " + error.message,
+    };
+  }
+};
+
 export const donate = async (address, value) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.

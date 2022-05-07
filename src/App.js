@@ -39,8 +39,8 @@ const App = () => {
         <Nav walletAddress={walletAddress} handleConnect={handleConnect}/>
         <Routes>
           <Route path={process.env.PUBLIC_URL +'/'} element={<Home walletAddress={walletAddress} status={status}/>}/>
-          <Route path={process.env.PUBLIC_URL +'/admin/'} element={<AdminPage wallet={walletAddress} status={status}/>} />
-          <Route path={process.env.PUBLIC_URL +'/funds/'} element={<>Hii</>}/>
+          <Route path={process.env.PUBLIC_URL +'/admin/'} element={<AdminPage walletAddress={walletAddress} status={status}/>} />
+          <Route path={process.env.PUBLIC_URL +'/funds/'} element={<Funds/>}/>
         </Routes>
       </BrowserRouter>
     </div>
