@@ -3,11 +3,11 @@ import { useState, useEffect, useLayoutEffect } from "react";
 import webIcon from './decentralized.png'
 import './style.css'
 import {
-    connectWallet, 
+    connectWallet,
     getCurrentWalletConnected,
     getTotalAmountFunded,
     donate
- } from "./util/interact";
+} from "./util/interact";
 require('dotenv').config();
 const alchemyKey = process.env.REACT_APP_ALCHEMY_KEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
@@ -25,7 +25,7 @@ const Home = () => {
 
     useLayoutEffect(() => {
         const walletConnection = async () => {
-            const {address, status} = await getCurrentWalletConnected();
+            const { address, status } = await getCurrentWalletConnected();
             setWallet(address);
             setStatus(status);
         };
@@ -38,7 +38,7 @@ const Home = () => {
     });
 
     const handleConnect = async () => {
-        const {address, status} = connectWallet();
+        const { address, status } = connectWallet();
         setWallet(address);
         setStatus(status);
     };
@@ -62,66 +62,132 @@ const Home = () => {
         setMessage(e.target.value);
     };
 
-    return(
+    return (
 
-        <>
-        <div className= "footer">
-            <div className="left-side">
+        <div className="root">
+            <div className="footer">
+                <div className="left-side">
 
-                <div className="main-tab">
-                    <img src={webIcon} className = "main-icon" alt="main-icon"></img>
-                    <div className="main-tab-text">
-                        Website Name
+                    <div className="main-tab">
+                        <img src={webIcon} className="main-icon" alt="main-icon"></img>
+                        <div className="main-tab-text">
+                            Website Name
+                        </div>
+
                     </div>
-                    
+
+                    <button className="left-tab">
+                        Tab 1 Text
+                    </button>
+                    <button className="left-tab">
+                        Tab 2 Text
+                    </button>
+                    <button className="left-tab left-tab-three">
+                        Tab 3 Text
+                    </button>
+                    <button className="left-tab">
+                        Tab 4 Text
+                    </button>
+
+
                 </div>
 
-                <button className="left-tab">
-                    Tab 1 Text
-                </button>
-                <button className="left-tab">
-                    Tab 2 Text
-                </button>
-                <button className="left-tab left-tab-three">
-                    Tab 3 Text
-                </button>
-                <button className="left-tab">
-                    Tab 4 Text
-                </button>
-
+                <div className="right-side">
+                    <button className="right-tab">
+                        Log in
+                    </button>
+                    <button className="right-tab">
+                        Sign up
+                    </button>
+                </div>
 
             </div>
 
-            <div className="right-side">
-                <button className="right-tab">
-                    Log in
-                </button>
-                <button className="right-tab">
-                    Sign up
-                </button>
+            <div className="content">
+                <div className="content-main-text">
+                    Decentralized for a better tomorrow
+                </div>
+                <div className="content-sub-text">
+                    Buy something. Join and fund causes. Change the world!
+                </div>
+
+                <div className="statistics-section">
+                    <div className="box box-1">
+                        <div className="change">
+                            +/- 5%
+                        </div>
+                        <div className="centered-main">
+                            <div className="amount">
+                                1.98M
+                            </div>
+                            <div className="explainment">
+                                Explanation
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box box-2" >
+                        <div className="change">
+                            +/- 5%
+                        </div>
+                        <div className="centered-main">
+                            <div className="amount">
+                                1.98M
+                            </div>
+                            <div className="explainment">
+                                Explanation
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box box-3">
+                        <div className="change">
+                            +/- 5%
+                        </div>
+                        <div className="centered-main">
+                            <div className="amount">
+                                1.98M
+                            </div>
+                            <div className="explainment">
+                                Explanation
+                            </div>
+                        </div>
+                    </div>
+                    <div className="box  box-4">
+                        <div className="change">
+                            +/- 5%
+                        </div>
+                        <div className="centered-main">
+                            <div className="amount">
+                                1.98M
+                            </div>
+                            <div className="explainment">
+                                Explanation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
+            <div className="input-section">
+                <div className="info-div">
+                    <div>Wallet:  {walletAddress}</div>
+                     <div>Status:  {status}</div>
+                </div>
+                <div className="donate-section">
+                    <input type="number" value={ethAmountToSend} onChange={e => handleInputChange(e)}/>
+                    <input type="text" value={message} placeholder = "example placeholder" onChange={e => handleMessageChange(e)} />
+                    <button className="donate-button" onClick={handleDonate}>Donate</button>
+                </div>
+                <div className = "con-discon">
+                    <button className="connection-button" onClick={handleConnect}>
+                        Connect
+                    </button>
+                    <button className="connection-button" onClick={handleDisconnect}>
+                        Disconnect
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div className="content">
-            <div className="content-main-text">
-                Decentralized for a better tomorrow
-            </div>
-            <div className="content-sub-text">
-                Buy something. Join and fund causes. Change the world!
-            </div>
-
-            <div>
-                
-            </div>
-
-        </div>
-
-        <div className="footer">
-
-
-        </div>
-        </>
 
         /*<div>
             <h1>Fund Us</h1>

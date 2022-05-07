@@ -1,6 +1,16 @@
+body{
+    background-color: rgb(237, 243, 248);
+}
+
 .main-icon{
     width: 24px;
     height: 24px;
+}
+.root{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-tab{
@@ -87,4 +97,127 @@
     font-size: 14px;
     color: rgb(43, 42, 42);
     width: 26rem;
+}
+
+.statistics-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 5rem;
+
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    height: 7rem;
+    border-radius: 10px;
+    padding: 0.7rem;
+}
+
+.centered-main{
+    text-align: center;
+    margin-top: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.amount{
+    color: rgb(7, 7, 85);
+    font-size: 30px;
+    font-weight: bold;
+}
+.explainment{
+    font-size: 14px;
+    font-weight: 500;
+}
+.change{
+    text-align: end;
+}
+
+.box-1{
+    background-color: rgba(154, 207, 154, 0.7);
+}
+.box-2{
+    background-color: rgba(139, 139, 197, 0.7);
+}
+.box-3{
+    background-color: rgba(167, 152, 152, 0.7);
+}
+.box-4{
+    background-color: rgba(136, 207, 204, 0.7);
+}
+
+.input-section{
+    border: 1px solid rgba(187, 183, 183, 0.7);
+    width: 66rem;
+    height: 20rem;
+    margin-top: 2rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.con-discon{
+    display: flex;
+    gap: 2rem;
+}
+.connection-button{
+    background-color: rgb(7, 7, 85);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 10rem;
+    padding: 0.7rem;
+}
+.connection-button:hover{
+    background-color: rgb(1, 1, 20);
+}
+.connection-button:active{
+    background-color: rgb(228, 215, 215);
+    color: black;
+}
+.donate-section{
+    display: flex;
+    gap: 2rem;
+}
+.donate-button{
+    background-color: rgb(228, 215, 215);
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.donate-button:hover{
+    background-color: rgb(223, 205, 205);
+}
+.donate-button:active{
+    background-color: rgb(209, 183, 183);
+}
+.donate-section > input{
+    border-radius: 4px;
+}
+
+.info-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgb(7, 7, 85);
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.info-div > div{
+
+
 }
