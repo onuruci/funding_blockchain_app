@@ -1,5 +1,6 @@
 body{
     background-color: rgb(237, 243, 248);
+    overflow-x: hidden;
 }
 
 .main-icon{
@@ -37,6 +38,7 @@ body{
     font-size: 14px;
     padding: 3px 8px 3px 8px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .footer{
@@ -45,6 +47,11 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1vw;
+    text-decoration: none;
+}
+
+.linker {
+    text-decoration: none;
 }
 
 .left-tab:hover{

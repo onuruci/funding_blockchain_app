@@ -1,10 +1,7 @@
 import react from "react";
 import { useState, useEffect, useLayoutEffect } from "react";
-import webIcon from './decentralized.png'
 import './style.css'
 import {
-    connectWallet,
-    getCurrentWalletConnected,
     getTotalAmountFunded,
     donate
 } from "./util/interact";
@@ -14,34 +11,20 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
 
-const Home = () => {
+const Home = ({walletAddress, status}) => {
 
-    const [walletAddress, setWallet] = useState("");
-    const [status, setStatus] = useState("");
     const [funds, setFunds] = useState([]);
     const [ethAmountToSend, setEthAmount] = useState(0);
     const [totalAmount, setTotalAmount] = useState(0);
     const [message, setMessage] = useState('');
 
     useLayoutEffect(() => {
-        const walletConnection = async () => {
-            const { address, status } = await getCurrentWalletConnected();
-            setWallet(address);
-            setStatus(status);
-        };
         const getTotalAmount = async () => {
             const total = await getTotalAmountFunded();
             setTotalAmount(parseFloat(web3.utils.fromWei(total.toString(), 'ether')).toFixed(2));
         }
-        walletConnection();
         getTotalAmount();
     }, []);
-
-    const handleConnect = async () => {
-        const { address, status } = connectWallet();
-        setWallet(address);
-        setStatus(status);
-    };
 
     const handleInputChange = (e) => {
         setEthAmount(e.target.value);
@@ -67,43 +50,6 @@ const Home = () => {
     return (
 
         <div className="root">
-            <div className="footer">
-                <div className="left-side">
-
-                    <div className="main-tab">
-                        <img src={webIcon} className="main-icon" alt="main-icon"></img>
-                        <div className="main-tab-text">
-                            Fund Us
-                        </div>
-
-                    </div>
-
-                    <button className="left-tab">
-                        Admin Page
-                    </button>
-
-                    <button className="left-tab">
-                        View Earlier Donations
-                    </button>
-
-
-                </div>
-
-                {
-                    walletAddress !== "" ? <div className="right-side">
-                        <button className="right-tab">
-                            Wallet Connected {walletAddress.slice(0,8)}...
-                        </button>
-                    </div> :
-                    <div className="right-side">
-                        <button className="right-tab" onClick={handleConnect}>
-                            Connect Wallet
-                        </button>
-                    </div>
-                }
-
-            </div>
-
             <div className="content">
                 <div className="content-main-text">
                     Fund Us Project
