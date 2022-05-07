@@ -30,6 +30,7 @@ const Home = () => {
         const getTotalAmount = async () => {
             const total = await getTotalAmountFunded();
             setTotalAmount(total);
+            console.log("");
         }
         walletConnection();
         getTotalAmount();
