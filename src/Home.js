@@ -33,7 +33,7 @@ const Home = () => {
         }
         walletConnection();
         getTotalAmount();
-    });
+    }, []);
 
     const handleConnect = async () => {
         const {address, status} = connectWallet();
