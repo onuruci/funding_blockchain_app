@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/funding_blockchain_app/static/css/main.4408306e.chunk.css",
-    "main.js": "/funding_blockchain_app/static/js/main.595203f4.chunk.js",
-    "main.js.map": "/funding_blockchain_app/static/js/main.595203f4.chunk.js.map",
+    "main.js": "/funding_blockchain_app/static/js/main.db3fac4e.chunk.js",
+    "main.js.map": "/funding_blockchain_app/static/js/main.db3fac4e.chunk.js.map",
     "runtime-main.js": "/funding_blockchain_app/static/js/runtime-main.01a208fa.js",
     "runtime-main.js.map": "/funding_blockchain_app/static/js/runtime-main.01a208fa.js.map",
-    "static/js/2.31b17014.chunk.js": "/funding_blockchain_app/static/js/2.31b17014.chunk.js",
-    "static/js/2.31b17014.chunk.js.map": "/funding_blockchain_app/static/js/2.31b17014.chunk.js.map",
+    "static/js/2.3e071096.chunk.js": "/funding_blockchain_app/static/js/2.3e071096.chunk.js",
+    "static/js/2.3e071096.chunk.js.map": "/funding_blockchain_app/static/js/2.3e071096.chunk.js.map",
     "static/js/3.dcde6979.chunk.js": "/funding_blockchain_app/static/js/3.dcde6979.chunk.js",
     "static/js/3.dcde6979.chunk.js.map": "/funding_blockchain_app/static/js/3.dcde6979.chunk.js.map",
     "index.html": "/funding_blockchain_app/index.html",
     "static/css/main.4408306e.chunk.css.map": "/funding_blockchain_app/static/css/main.4408306e.chunk.css.map",
-    "static/js/2.31b17014.chunk.js.LICENSE.txt": "/funding_blockchain_app/static/js/2.31b17014.chunk.js.LICENSE.txt",
+    "static/js/2.3e071096.chunk.js.LICENSE.txt": "/funding_blockchain_app/static/js/2.3e071096.chunk.js.LICENSE.txt",
     "static/media/decentralized.a67394cf.png": "/funding_blockchain_app/static/media/decentralized.a67394cf.png"
   },
   "entrypoints": [
     "static/js/runtime-main.01a208fa.js",
-    "static/js/2.31b17014.chunk.js",
+    "static/js/2.3e071096.chunk.js",
     "static/css/main.4408306e.chunk.css",
-    "static/js/main.595203f4.chunk.js"
+    "static/js/main.db3fac4e.chunk.js"
   ]
 }
