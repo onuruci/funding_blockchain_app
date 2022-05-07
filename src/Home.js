@@ -31,8 +31,7 @@ const Home = () => {
         };
         const getTotalAmount = async () => {
             const total = await getTotalAmountFunded();
-            setTotalAmount(total);
-            console.log("");
+            setTotalAmount(parseFloat(web3.utils.fromWei(total.toString(), 'ether')).toFixed(2));
         }
         walletConnection();
         getTotalAmount();
@@ -53,6 +52,8 @@ const Home = () => {
         console.log(weiValue);
         const hash = await donate(walletAddress, weiValue);
         console.log(hash);
+        setEthAmount(0);
+        setMessage("");
     };
 
     const handleDisconnect = async () => {
@@ -72,57 +73,62 @@ const Home = () => {
                     <div className="main-tab">
                         <img src={webIcon} className="main-icon" alt="main-icon"></img>
                         <div className="main-tab-text">
-                            Website Name
+                            Fund Us
                         </div>
 
                     </div>
 
                     <button className="left-tab">
-                        Tab 1 Text
+                        Admin Page
                     </button>
+
                     <button className="left-tab">
-                        Tab 2 Text
-                    </button>
-                    <button className="left-tab left-tab-three">
-                        Tab 3 Text
-                    </button>
-                    <button className="left-tab">
-                        Tab 4 Text
+                        View Earlier Donations
                     </button>
 
 
                 </div>
 
-                <div className="right-side">
-                    <button className="right-tab">
-                        Log in
-                    </button>
-                    <button className="right-tab">
-                        Sign up
-                    </button>
-                </div>
+                {
+                    walletAddress !== "" ? <div className="right-side">
+                        <button className="right-tab">
+                            Wallet Connected {walletAddress.slice(0,8)}...
+                        </button>
+                    </div> :
+                    <div className="right-side">
+                        <button className="right-tab" onClick={handleConnect}>
+                            Connect Wallet
+                        </button>
+                    </div>
+                }
 
             </div>
 
             <div className="content">
                 <div className="content-main-text">
-                    Decentralized for a better tomorrow
+                    Fund Us Project
                 </div>
                 <div className="content-sub-text">
-                    Buy something. Join and fund causes. Change the world!
+                    This project is developed for learning purposes</div>
+                <div className="content-sub-text"> 
+                    by onuruci and tunahandundar.
+                </div>
+                <div className="content-sub-text">The contract of this project runs on Ethereum Ropsten test chain. Main purpose of the contract is to
+                    collect funds and let the admin to withdraw those funds or give admin status to some else.
+                    You can test this project by sending us Ropsten ETH :).
                 </div>
 
                 <div className="statistics-section">
                     <div className="box box-1">
                         <div className="change">
-                            +/- 5%
+                            +
                         </div>
                         <div className="centered-main">
                             <div className="amount">
-                                1.98M
+                                {totalAmount} ETH
                             </div>
                             <div className="explainment">
-                                Explanation
+                                Total Funded
                             </div>
                         </div>
                     </div>
@@ -132,36 +138,10 @@ const Home = () => {
                         </div>
                         <div className="centered-main">
                             <div className="amount">
-                                1.98M
+                                100 ETH
                             </div>
                             <div className="explainment">
-                                Explanation
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box box-3">
-                        <div className="change">
-                            +/- 5%
-                        </div>
-                        <div className="centered-main">
-                            <div className="amount">
-                                1.98M
-                            </div>
-                            <div className="explainment">
-                                Explanation
-                            </div>
-                        </div>
-                    </div>
-                    <div className="box  box-4">
-                        <div className="change">
-                            +/- 5%
-                        </div>
-                        <div className="centered-main">
-                            <div className="amount">
-                                1.98M
-                            </div>
-                            <div className="explainment">
-                                Explanation
+                                Aim
                             </div>
                         </div>
                     </div>
@@ -176,49 +156,11 @@ const Home = () => {
                 </div>
                 <div className="donate-section">
                     <input type="number" value={ethAmountToSend} onChange={e => handleInputChange(e)}/>
-                    <input type="text" value={message} placeholder = "example placeholder" onChange={e => handleMessageChange(e)} />
+                    <input type="text" value={message} placeholder = "message" onChange={e => handleMessageChange(e)} />
                     <button className="donate-button" onClick={handleDonate}>Donate</button>
-                </div>
-                <div className = "con-discon">
-                    <button className="connection-button" onClick={handleConnect}>
-                        Connect
-                    </button>
-                    <button className="connection-button" onClick={handleDisconnect}>
-                        Disconnect
-                    </button>
                 </div>
             </div>
         </div>
-
-        /*<div>
-            <h1>Fund Us</h1>
-            <h2>About fund us project</h2>
-            <p>
-                This project is developed for testing and learning purposes. Smart Contract
-                runs on Ropsten Test Chain. You can send us Ropsten Eth to test the project. Thanks :).
-            </p>
-            <h3>
-                COntract Address:  0x99A4011f1C715dcCdd1Ae7B9C0c94BBCF183cDDb
-            </h3>
-            <div>
-                <div>You can use</div>
-                <a href="https://ropsten.etherscan.io/">Ropsten Etherscan</a>
-                <div> to view the contract code.</div>
-            </div>
-            <div>
-                Total Amount Funded : {totalAmount}
-            </div>
-            <div>
-                <input type="number" value={ethAmountToSend} onChange={e => handleInputChange(e)}/>
-                <input type="text" value={message} onChange={e => handleMessageChange(e)} />
-                <button onClick={handleDonate}>Donate</button>
-            </div>
-            <h1>Wallet:  {walletAddress}</h1>
-            <h1>Status:  {status}</h1>
-            <button onClick={handleConnect}>Connect</button>
-            <button onClick={handleDisconnect}>Disconnect</button>
-
-    </div>*/
     );
 };
 

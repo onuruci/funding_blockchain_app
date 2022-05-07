@@ -49,7 +49,7 @@ export const connectWallet = async () => {
             method: "eth_requestAccounts",
           });
           const obj = {
-            status: "👆🏽 Write a message in the text-field above.",
+            status: "👆🏽 You can send ropsten ether",
             address: addressArray[0],
           };
           return obj;
@@ -85,7 +85,7 @@ export const getCurrentWalletConnected = async () => {
       if (addressArray.length > 0) {
         return {
           address: addressArray[0],
-          status: "👆🏽 Write a message in the text-field above.",
+          status: "👆🏽 You can send some ropsten ether",
         };
       } 
       else {
